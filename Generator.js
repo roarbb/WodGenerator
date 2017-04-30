@@ -8,32 +8,39 @@ class Generator {
     generateWod() {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                // const repetitionScheme = this._getRandomRepScheme(Database.repetition_schemes)
-                // resolve(`Repetition scheme: `);
-                resolve(`5 rounds for time: 100 Double unders, 10 burpees`);
+                const repetitionScheme = this._getRandomRepScheme(Database.repetition_schemes)
+                resolve(`Selected Repetition scheme: ${repetitionScheme.name}`);
             }, this.throttleInMilliseconds)
         })
     }
 
     _getRandomRepScheme(schemes) {
-        schemeChances = [];
+        let total = 0;
 
-        // TODO: needs to be synchronous (Generator functions/Promises)
-        schemes.forEach((scheme) => {
-            let counter = schemeChances.length + 1;
-            if (counter === 1) {
-                const min = 0;
-                const max = 100 * scheme.chance;
-            } else {
-                const lastElement = schemeChances[schemeChances.length - 1];
-                const min = lastElement.max + 1;
-                const max = lastElement.min + 100 * scheme.chance;
+        const newSchemes = schemes.map((scheme) => {
+            let min = 0;
+            let max = 100 * scheme.chance;
+
+            if (total > 0) {
+                min = total + 1;
+                max = min + (100 * scheme.chance);
             }
-            schemeChance = { "name": scheme.name, "min": min, "max": max };
-            schemeChances.push(schemeChance);
+
+            total = max;
+
+            return { "name": scheme.name, "min": min, "max": max };
+        });
+
+        randomNumber = this._getRandomInt(0, total);
+        // console.log('newSchemes', newSchemes);
+        console.log('randomNumber', randomNumber);
+
+        randomScheme = newSchemes.filter((scheme) => {
+            return randomNumber <= scheme.max && randomNumber >= scheme.min
         })
 
-        console.log("Scheme chances: ", schemeChances);
+        console.log('randomScheme', randomScheme[0]);
+        return randomScheme[0];
     }
 
     /**
