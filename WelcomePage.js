@@ -7,7 +7,6 @@ import {
   TouchableHighlight
 } from 'react-native';
 import WodPage from './WodPage'
-import { MKButton } from 'react-native-material-kit'
 
 export default class WelcomePage extends Component {
   render() {
