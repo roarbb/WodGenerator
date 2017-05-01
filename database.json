@@ -2,7 +2,7 @@
     "repetition_schemes": [
         {"name": "AMRAP", "chance": 1},
         {"name": "For Time", "chance": 1},
-        {"name": "[range] rounds for time", "range": {"min": 2, "max": 5}, "chance": 3},
+        {"name": "[range] rounds for time", "range": {"min": 2, "max": 6}, "chance": 3},
         {"name": "EMOM"}
     ]
 }

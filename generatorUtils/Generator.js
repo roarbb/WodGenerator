@@ -19,7 +19,7 @@ class Generator {
 
     _getRandomRepScheme(schemes) {
         const schemesWithChanceRange = this._getSchemesWithChanceRange(schemes);
-        const randomNumber = getRandomInt(0, this.total+1);
+        const randomNumber = getRandomInt(0, this.total + 1);
 
         const randomSchema = schemesWithChanceRange.filter(
             this._randomNumberIsInSchemaRange.bind(this, randomNumber)
