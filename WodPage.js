@@ -5,7 +5,7 @@ import {
     View,
     ActivityIndicator
 } from 'react-native';
-import Generator from './Generator'
+import Generator from './generatorUtils/Generator'
 
 export default class WodPage extends Component {
     constructor(props) {
@@ -23,21 +23,28 @@ export default class WodPage extends Component {
 
     componentDidMount() {
         this.generator.generateWod()
-        .then(wod => {
-            this.setState({
-                isLoading: false,
-                wod: wod,
+            .then(wod => {
+                this.setState({
+                    isLoading: false,
+                    wod: wod,
+                })
             })
-        })
-        .catch(error => console.log(error))
+            .catch(error => console.log(error))
     }
 
     render() {
-        const generatedWod = <View style={styles.container}>
-            <Text style={styles.welcome}>
-                {this.state.wod}
+        let generatedWod = <Text style={styles.welcome}>Something's wrong, please try again.</Text>
+
+        if (this.state.wod) {
+            generatedWod = <View style={styles.container}>
+                <Text style={styles.welcome}>
+                    Selected repetition scheme:
             </Text>
-        </View>
+                <Text style={styles.description}>
+                    {this.state.wod.name}
+                </Text>
+            </View>
+        }
 
         const spinner = <View style={styles.container}>
             <Text style={styles.welcome}>Generating your WOD</Text>
@@ -67,7 +74,11 @@ const styles = StyleSheet.create({
         fontSize: 20,
         textAlign: 'center',
         margin: 10,
-        marginTop: 50,
         color: '#edeeff',
+    },
+    description: {
+        fontSize: 25,
+        textAlign: 'center',
+        color: '#b163b2',
     },
 });
