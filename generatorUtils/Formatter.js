@@ -1,4 +1,4 @@
-import { getRandomInt } from './RandomUtils';
+import { getRandomInt, getRandomFromArray } from './RandomUtils';
 
 export default class Formatter {
     format(item) {
@@ -10,13 +10,27 @@ export default class Formatter {
                 continue;
             }
 
-            item[property] = item[property].replace(/\[(.*?)\]/, (match, p1, offset, string) => {
+            item[property] = item[property].replace(new RegExp(/\[(.*?)\]/, 'g'), (match, p1) => {
                 if (
-                    typeof item.originalScheme[p1] === 'object'
-                    && item.originalScheme[p1].max
-                    && item.originalScheme[p1].min
+                    item.originalData[p1]
+                    && typeof item.originalData[p1] === 'object'
+                    && item.originalData[p1].max
+                    && item.originalData[p1].min
                 ) {
-                    return getRandomInt(item.originalScheme[p1].min, item.originalScheme[p1].max + 1);
+                    let randomNumber = getRandomInt(item.originalData[p1].min, item.originalData[p1].max + 1);
+                    this._setNewRandomProperty(item, p1, randomNumber);
+
+                    return randomNumber;
+                }
+
+                if (
+                    item.originalData[p1]
+                    && item.originalData[p1].constructor === Array
+                ) {
+                    let randomArray = getRandomFromArray(item.originalData[p1]);
+                    this._setNewRandomProperty(item, p1, randomArray);
+
+                    return randomArray;
                 }
 
                 return p1;
@@ -24,5 +38,13 @@ export default class Formatter {
         }
 
         return item;
+    }
+
+    _setNewRandomProperty(item, key, value) {
+        if (!item.random) {
+            item.random = {};
+        }
+
+        item.random[key] = value;
     }
 }
