@@ -10,9 +10,8 @@ class Generator {
     generateWod() {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                const repetitionScheme = this.picker.pickOneRandom(Database.workout_types);
-                console.log('repetitionScheme', repetitionScheme)
-                resolve(repetitionScheme);
+                const workoutType = this.picker.pickOneRandom(Database.workout_types);
+                resolve(workoutType);
             }, this.throttleInMilliseconds)
         })
     }
