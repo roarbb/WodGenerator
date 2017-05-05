@@ -3,7 +3,7 @@ import Picker from './Picker'
 
 class Generator {
     constructor() {
-        this.throttleInMilliseconds = 1456;
+        this.throttleInMilliseconds = 0;
         this.picker = new Picker;
     }
 
@@ -11,6 +11,27 @@ class Generator {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 const workoutType = this.picker.pickOneRandom(Database.workout_types);
+                let repetitionScheme,
+                    benchmarkWorkout,
+                    movements = [];
+
+                if (workoutType.originalData.next === 'repetition_schemes') {
+                    repetitionScheme = this.picker.pickOneRandom(Database.repetition_schemes);
+                }
+
+                if (workoutType.originalData.next === 'girls') {
+                    benchmarkWorkout = this.picker.pickOneRandom(Database.girls);
+                }
+
+                if (workoutType.originalData.next === 'movements') {
+                    movements = this.picker.pickRandomMovements(Database.movements, workoutType, repetitionScheme);
+                }
+
+                console.log('workoutType', workoutType);
+                console.log('repetitionScheme', repetitionScheme);
+                console.log('movements', movements);
+                console.log('benchmarkWorkout', benchmarkWorkout);
+
                 resolve(workoutType);
             }, this.throttleInMilliseconds)
         })

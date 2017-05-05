@@ -21,6 +21,10 @@ export default class Picker {
         return this.formatter.format(randomDataset[0]);
     }
 
+    pickRandomMovements(movements, workoutType, repetitionScheme) {
+        return [];
+    }
+
     _getdatasetWithChanceRange(dataset) {
         this.total = 0;
 
