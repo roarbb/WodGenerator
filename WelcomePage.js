@@ -16,7 +16,7 @@ export default class WelcomePage extends Component {
           To generate your WOD simply press the button below. Have fun!
         </Text>
         <TouchableHighlight style={styles.button} underlayColor='#f7d931' onPress={this._onGeneratePress.bind(this)}>
-          <Text style={styles.buttonText}>Go</Text>
+          <Text style={styles.buttonText}>Generate WOD</Text>
         </TouchableHighlight>
       </View>
     );

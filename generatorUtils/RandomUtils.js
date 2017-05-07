@@ -9,6 +9,6 @@ export function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
 
-export function getRandomFromArray(items) {
+export function getOneRandomFromArray(items) {
     return items[getRandomInt(0, items.length)];
 }

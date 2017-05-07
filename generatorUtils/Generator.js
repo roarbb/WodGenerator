@@ -10,32 +10,36 @@ class Generator {
     generateWod() {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
-                const workoutType = this.picker.pickOneRandom(Database.workout_types);
+                const workoutType = this.picker.pickOneRandom(Database.workout_types),
+                      databaseMovements = [...Database.movements],
+                      databaseRepetitionSchemes = [...Database.repetition_schemes],
+                      databaseGirls = [...Database.girls];
+                      
                 let repetitionScheme,
                     benchmarkWorkout,
                     movements = [];
 
                 if (workoutType.originalData.next === 'repetition_schemes') {
-                    repetitionScheme = this.picker.pickOneRandom(Database.repetition_schemes);
+                    repetitionScheme = this.picker.pickOneRandom(databaseRepetitionSchemes);
                 }
 
                 if (workoutType.originalData.next === 'girls') {
-                    benchmarkWorkout = this.picker.pickOneRandom(Database.girls);
+                    benchmarkWorkout = this.picker.pickOneRandom(databaseGirls);
                 }
 
                 if (workoutType.originalData.next === 'movements') {
-                    movements = this.picker.pickRandomMovements(Database.movements, workoutType, repetitionScheme);
+                    movements = this.picker.pickRandomMovements(databaseMovements, workoutType, repetitionScheme);
                 }
 
-                console.log('workoutType', workoutType);
-                console.log('repetitionScheme', repetitionScheme);
-                console.log('movements', movements);
-                console.log('benchmarkWorkout', benchmarkWorkout);
+                // console.log('workoutType', workoutType);
+                // console.log('repetitionScheme', repetitionScheme);
+                // console.log('movements', movements);
+                // console.log('benchmarkWorkout', benchmarkWorkout);
 
                 resolve(workoutType);
             }, this.throttleInMilliseconds)
         })
     }
 }
-
+9
 export default Generator

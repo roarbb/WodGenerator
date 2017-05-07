@@ -1,4 +1,4 @@
-import { getRandomInt, getRandomFromArray } from './RandomUtils';
+import { getRandomInt, getOneRandomFromArray } from './RandomUtils';
 
 export default class Formatter {
     format(item) {
@@ -27,7 +27,7 @@ export default class Formatter {
                     item.originalData[p1]
                     && item.originalData[p1].constructor === Array
                 ) {
-                    let randomArray = getRandomFromArray(item.originalData[p1]);
+                    let randomArray = getOneRandomFromArray(item.originalData[p1]);
                     this._setNewRandomProperty(item, p1, randomArray);
 
                     return randomArray;
