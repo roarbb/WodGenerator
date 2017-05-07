@@ -21,6 +21,7 @@ class Generator {
 
                 if (workoutType.originalData.next === 'repetition_schemes') {
                     repetitionScheme = this.picker.pickOneRandom(databaseRepetitionSchemes);
+                    movements = this.picker.pickMovementsForRepetitionScheme(repetitionScheme, databaseMovements);
                 }
 
                 if (workoutType.originalData.next === 'girls') {
@@ -31,10 +32,10 @@ class Generator {
                     movements = this.picker.pickRandomMovements(databaseMovements, workoutType, repetitionScheme);
                 }
 
-                // console.log('workoutType', workoutType);
-                // console.log('repetitionScheme', repetitionScheme);
-                // console.log('movements', movements);
-                // console.log('benchmarkWorkout', benchmarkWorkout);
+                console.log('workoutType', workoutType);
+                console.log('repetitionScheme', repetitionScheme);
+                console.log('movements', movements);
+                console.log('benchmarkWorkout', benchmarkWorkout);
 
                 resolve(workoutType);
             }, this.throttleInMilliseconds)

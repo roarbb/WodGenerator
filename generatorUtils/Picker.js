@@ -22,25 +22,28 @@ export default class Picker {
     }
 
     pickRandomMovements(movements, workoutType, repetitionScheme) {
-        console.log('movements', movements);
-        console.log('workoutType', workoutType);
-        console.log('repetitionScheme', repetitionScheme);
-
         if (!repetitionScheme && workoutType.random && workoutType.random.movements) {
-            return this._getMovementsWithWeight(workoutType.random.movements, movements);
+            return this._getMovementsWithWeight(movements, workoutType.random.movements);
         }
 
         return [];
     }
 
-    _getMovementsWithWeight(count, movements) {
-        const pickedMovements = this._getUniqueMovements(movements, count);
+    pickMovementsForRepetitionScheme(repetitionScheme, movements) {
+        if (repetitionScheme.movements) {
+            console.log('------- have movements -------------')
+        } else {
+            console.log('---------- don have movements');
+        }
 
-        console.log('picked movements: ', pickedMovements);
+        return [];
+    }
+
+    _getMovementsWithWeight(movements, count) {
+        return this._getUniqueMovements(movements, count);
     }
 
     _getUniqueMovements(movements, count) {
-
         let out = [];
 
         for (let i = 0; i < count; i++) {
@@ -48,7 +51,7 @@ export default class Picker {
             const randomNumber = getRandomInt(0, this.total + 1);
 
             movementsDataset.forEach((element, index, array) => {
-                if(this._randomNumberIsInSchemaRange(randomNumber, element)) {
+                if (this._randomNumberIsInSchemaRange(randomNumber, element)) {
                     out.push(movements.splice(index, 1)[0]);
                 }
             });
