@@ -3,7 +3,7 @@
         {"name": "AMRAP in [range] minutes", "range": [10, 15, 20, 25, 30, 35, 40], "chance": 1, "next": "repetition_schemes"},
         {"name": "For Time", "chance": 1, "next": "repetition_schemes"},
         {"name": "[range] rounds for time", "range": {"min": 2, "max": 6}, "chance": 1, "next": "repetition_schemes"},
-        {"name": "EMOM  ([rounds] rounds, [movements] movements)", "rounds": [3, 4, 5], "movements": [2, 3, 4], "chance": 1, "next": "movements", "note": "Focus on technique, if it feels good add weight or reps."},
+        {"name": "EMOM  ([rounds] rounds, [movements] movements)", "rounds": [3, 4, 5], "movements": [2, 3], "chance": 1, "next": "movements", "note": "Focus on technique, if it feels good add weight or reps."},
         {"name": "Benchmark Workout", "next": "girls", "chance": 1}
     ],
     "repetition_schemes": [
@@ -18,48 +18,48 @@
     "movements": [
         {
             "name": "Man maker", "needBarbell": false, "needDumbell": true, "onlyBodyWeight": false,
-            "reps": { "min": 5, "max": 10 }, "weight": { "male": 22.5, "female": 15 }, "chance": 1
+            "reps": { "min": 5, "max": 10 }, "weight": { "male": 22.5, "female": 15 }, "chance": 10
         },
         {
             "name": "Front Squat", "needBarbell": true, "needDumbell": false, "onlyBodyWeight": false,
-            "reps": { "min": 5, "max": 20 }, "weight": { "male": 50, "female": 30 }, "chance": 1
+            "reps": { "min": 5, "max": 20 }, "weight": { "male": 50, "female": 30 }, "chance": 10
         },
         {
             "name": "Double under", "needBarbell": false, "needDumbell": false, "onlyBodyWeight": false,
-            "reps": { "min": 15, "max": 100 }, "chance": 1
+            "reps": { "min": 15, "max": 100 }, "chance": 10
         },
         {
             "name": "Air squat", "needBarbell": false, "needDumbell": false, "onlyBodyWeight": true,
-            "reps": { "min": 10, "max": 100 }, "chance": 1
+            "reps": { "min": 10, "max": 100 }, "chance": 10
         },
         {
             "name": "Pull up", "needBarbell": false, "needDumbell": false, "onlyBodyWeight": true,
-            "reps": { "min": 5, "max": 100 }, "chance": 1
+            "reps": { "min": 5, "max": 100 }, "chance": 10
         },
         {
             "name": "Push up", "needBarbell": false, "needDumbell": false, "onlyBodyWeight": true,
-            "reps": { "min": 5, "max": 100 }, "chance": 1
+            "reps": { "min": 5, "max": 100 }, "chance": 10
         },
         {
             "name": "Sit up", "needBarbell": false, "needDumbell": false, "onlyBodyWeight": true,
-            "reps": { "min": 5, "max": 100 }, "chance": 1
+            "reps": { "min": 5, "max": 100 }, "chance": 10
         },
         {
             "name": "Muscle up", "needBarbell": false, "needDumbell": false, "onlyBodyWeight": false,
-            "reps": { "min": 5, "max": 30 }, "chance": 1
+            "reps": { "min": 2, "max": 10 }, "chance": 5
         },
         {
             "name": "Snatch", "needBarbell": true, "needDumbell": false, "onlyBodyWeight": false,
-            "reps": { "min": 5, "max": 50 }, "weight": { "male": 50, "female": 40 }, "chance": 1
+            "reps": { "min": 5, "max": 50 }, "weight": { "male": 50, "female": 40 }, "chance": 10
         },
         {
             "name": "Deadlift", "needBarbell": true, "needDumbell": false, "onlyBodyWeight": false,
-            "reps": { "min": 5, "max": 50 }, "weight": { "male": 100, "female": 70 }, "chance": 1
-        },
-        {
-            "name": "", "needBarbell": true, "needDumbell": true, "onlyBodyWeight": false,
-            "reps": { "min": 5, "max": 10 }, "weight": { "male": 22.5, "female": 15 }, "chance": 1
+            "reps": { "min": 5, "max": 50 }, "weight": { "male": 100, "female": 70 }, "chance": 10
         }
+        // {
+        //     "name": "", "needBarbell": true, "needDumbell": true, "onlyBodyWeight": false,
+        //     "reps": { "min": 5, "max": 10 }, "weight": { "male": 22.5, "female": 15 }, "chance": 1
+        // }
     ],
     "girls": [
         {
