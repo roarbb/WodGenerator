@@ -1,20 +1,22 @@
 import Database from '../database.json'
 import Picker from './Picker'
+import Formatter from './Formatter'
 
 class Generator {
     constructor() {
         this.throttleInMilliseconds = 0;
         this.picker = new Picker;
+        this.formatter = new Formatter;
     }
 
     generateWod() {
         return new Promise((resolve, reject) => {
             setTimeout(() => {
                 const workoutType = this.picker.pickOneRandom(Database.workout_types),
-                      databaseMovements = [...Database.movements],
-                      databaseRepetitionSchemes = [...Database.repetition_schemes],
-                      databaseGirls = [...Database.girls];
-                      
+                    databaseMovements = [...Database.movements],
+                    databaseRepetitionSchemes = [...Database.repetition_schemes],
+                    databaseGirls = [...Database.girls];
+
                 let repetitionScheme,
                     benchmarkWorkout,
                     movements = [];
@@ -32,15 +34,12 @@ class Generator {
                     movements = this.picker.pickRandomMovements(databaseMovements, workoutType, repetitionScheme);
                 }
 
-                console.log('workoutType', workoutType);
-                console.log('repetitionScheme', repetitionScheme);
-                console.log('movements', movements);
-                console.log('benchmarkWorkout', benchmarkWorkout);
-
-                resolve(workoutType);
+                resolve(
+                    this.formatter.prepareWodOutput(workoutType, repetitionScheme, movements, benchmarkWorkout)
+                );
             }, this.throttleInMilliseconds)
         })
     }
 }
-9
+
 export default Generator

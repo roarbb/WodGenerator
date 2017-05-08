@@ -30,13 +30,54 @@ export default class Picker {
     }
 
     pickMovementsForRepetitionScheme(repetitionScheme, movements) {
-        if (repetitionScheme.movements) {
-            console.log('------- have movements -------------')
+        let reps = null;
+        let pickedMovements = [];
+
+        if (repetitionScheme.originalData.movements) {
+            repetitionScheme.originalData.reps = this._getRepsForRepetitionScheme(repetitionScheme.originalData);
+            reps = repetitionScheme.originalData.reps;
         } else {
-            console.log('---------- don have movements');
+            reps = repetitionScheme.originalData.reps;
         }
 
-        return [];
+        reps.forEach((rep) => {
+            //filter possible movements
+            const possibleMovements = movements.filter(movement => {
+                let blocked = false;
+
+                pickedMovements.forEach(pickedMovement => {
+                    if (pickedMovement.name === movement.name) {
+                        blocked = true;
+                    }
+                })
+
+                return !blocked && rep <= movement.reps.max && rep >= movement.reps.min;
+            })
+
+            //pick random
+            pickedMovements.push(this.pickOneRandom(possibleMovements));
+        })
+
+        return pickedMovements;
+    }
+
+    _getRepsForRepetitionScheme(repetitionScheme) {
+        if (!repetitionScheme.movements) {
+            return [1];
+        }
+
+        const movementsCount = getRandomInt(repetitionScheme.movements.min, repetitionScheme.movements.max);
+        let reps = [];
+
+        for (let i = 0; i < movementsCount; i++) {
+            if (repetitionScheme.reps[i]) {
+                reps.push(repetitionScheme.reps[i]);
+            } else {
+                reps.push(repetitionScheme.reps[repetitionScheme.reps.length - 1]);
+            }
+        }
+
+        return reps;
     }
 
     _getMovementsWithWeight(movements, count) {

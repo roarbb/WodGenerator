@@ -17,10 +17,6 @@ export default class WodPage extends Component {
         this.generator = new Generator
     }
 
-    componentWillUnmount() {
-        // clearTimeout(this.timeoutPointer);
-    }
-
     componentDidMount() {
         this.generator.generateWod()
             .then(wod => {
@@ -37,12 +33,10 @@ export default class WodPage extends Component {
 
         if (this.state.wod) {
             generatedWod = <View style={styles.container}>
-                <Text style={styles.welcome}>
-                    Selected repetition scheme:
-            </Text>
                 <Text style={styles.description}>
                     {this.state.wod.name}
                 </Text>
+                {this._renderMovements(this.state.wod.movements)}
             </View>
         }
 
@@ -60,6 +54,17 @@ export default class WodPage extends Component {
             </View>
         );
     }
+
+    _renderMovements(movements) {
+        return (
+            movements.map((movement, index) => <Text key={index} style={styles.welcome}>
+                {movement.reps && `${movement.reps} x`} {movement.name}
+                {movement.weight &&
+                    <Text> @ M: {movement.weight.male}kg / F: {movement.weight.female}kg</Text>
+                }
+            </Text>)
+        )
+    }
 }
 
 const styles = StyleSheet.create({
@@ -71,9 +76,9 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     welcome: {
-        fontSize: 20,
+        fontSize: 18,
         textAlign: 'center',
-        margin: 10,
+        // margin: 10,
         color: '#edeeff',
     },
     description: {

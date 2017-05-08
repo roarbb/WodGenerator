@@ -1,18 +1,18 @@
 {
     "workout_types": [
-        {"name": "AMRAP in [range] minutes", "range": [10, 15, 20, 25, 30, 35, 40], "chance": 1, "next": "repetition_schemes"},
-        {"name": "For Time", "chance": 1, "next": "repetition_schemes"},
+        {"name": "AMRAP in [range] minutes", "range": [10, 15, 20, 25, 30, 35, 40], "chance": 100, "next": "repetition_schemes"},
+        {"name": "For Time", "chance": 100, "next": "repetition_schemes"},
         {"name": "[range] rounds for time", "range": {"min": 2, "max": 6}, "chance": 100, "next": "repetition_schemes"},
         {"name": "EMOM  ([rounds] rounds, [movements] movements)", "rounds": [3, 4, 5], "movements": [2, 3, 4], "chance": 1, "next": "movements", "note": "Focus on technique, if it feels good add weight or reps."},
         {"name": "Benchmark Workout", "next": "girls", "chance": 1}
     ],
     "repetition_schemes": [
-        {"reps": [21,15,9], "chance": 100},
+        {"reps": [21,15,9], "chance": 1},
         {"reps": [20,10,5], "direction": "both", "chance": 1},
         {"reps": [22,18,16], "chance": 1},
         {"reps": [9,12,15], "chance": 1},
         {"movements": {"min": 2, "max": 5}, "reps": [10, 20, 30, 40, 50], "chance": 1},
-        {"movements": {"min": 2, "max": 6}, "reps": [9]}
+        {"movements": {"min": 2, "max": 6}, "reps": [9], "chance": 1}
     ],
     "movements": [
         {
@@ -33,12 +33,12 @@
         },
         {
             "name": "Pull ups", "needBarbell": false, "needDumbell": false, "onlyBodyWeight": true,
-            "reps": { "min": 5, "max": 30 }, "chance": 100
+            "reps": { "min": 5, "max": 30 }, "chance": 1
         }
     ],
     "girls": [
-        {"name": "Mary", "description": "Bla"},
-        {"name": "Fran", "description": "bla"},
-        {"name": "Cindy", "description": "bla"}
+        {"name": "Mary", "movements": []},
+        {"name": "Fran", "movements": []},
+        {"name": "Cindy", "movements": []}
     ]
 }
