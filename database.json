@@ -1,8 +1,8 @@
 {
     "workout_types": [
-        {"name": "AMRAP in [range] minutes", "range": [10, 15, 20, 25, 30, 35, 40], "chance": 100, "next": "repetition_schemes"},
-        {"name": "For Time", "chance": 100, "next": "repetition_schemes"},
-        {"name": "[range] rounds for time", "range": {"min": 2, "max": 6}, "chance": 100, "next": "repetition_schemes"},
+        {"name": "AMRAP in [range] minutes", "range": [10, 15, 20, 25, 30, 35, 40], "chance": 1, "next": "repetition_schemes"},
+        {"name": "For Time", "chance": 1, "next": "repetition_schemes"},
+        {"name": "[range] rounds for time", "range": {"min": 2, "max": 6}, "chance": 1, "next": "repetition_schemes"},
         {"name": "EMOM  ([rounds] rounds, [movements] movements)", "rounds": [3, 4, 5], "movements": [2, 3, 4], "chance": 1, "next": "movements", "note": "Focus on technique, if it feels good add weight or reps."},
         {"name": "Benchmark Workout", "next": "girls", "chance": 1}
     ],
@@ -11,12 +11,13 @@
         {"reps": [20,10,5], "direction": "both", "chance": 1},
         {"reps": [22,18,16], "chance": 1},
         {"reps": [9,12,15], "chance": 1},
+        {"reps": [5,10,15], "chance": 1},
         {"movements": {"min": 2, "max": 5}, "reps": [10, 20, 30, 40, 50], "chance": 1},
         {"movements": {"min": 2, "max": 6}, "reps": [9], "chance": 1}
     ],
     "movements": [
         {
-            "name": "Man makers", "needBarbell": false, "needDumbell": true, "onlyBodyWeight": false,
+            "name": "Man maker", "needBarbell": false, "needDumbell": true, "onlyBodyWeight": false,
             "reps": { "min": 5, "max": 10 }, "weight": { "male": 22.5, "female": 15 }, "chance": 1
         },
         {
@@ -24,21 +25,255 @@
             "reps": { "min": 5, "max": 20 }, "weight": { "male": 50, "female": 30 }, "chance": 1
         },
         {
-            "name": "Double unders", "needBarbell": false, "needDumbell": false, "onlyBodyWeight": false,
-            "reps": { "min": 15, "max": 60 }, "chance": 1
+            "name": "Double under", "needBarbell": false, "needDumbell": false, "onlyBodyWeight": false,
+            "reps": { "min": 15, "max": 100 }, "chance": 1
         },
         {
-            "name": "Air squats", "needBarbell": false, "needDumbell": false, "onlyBodyWeight": true,
+            "name": "Air squat", "needBarbell": false, "needDumbell": false, "onlyBodyWeight": true,
             "reps": { "min": 10, "max": 100 }, "chance": 1
         },
         {
-            "name": "Pull ups", "needBarbell": false, "needDumbell": false, "onlyBodyWeight": true,
+            "name": "Pull up", "needBarbell": false, "needDumbell": false, "onlyBodyWeight": true,
+            "reps": { "min": 5, "max": 100 }, "chance": 1
+        },
+        {
+            "name": "Push up", "needBarbell": false, "needDumbell": false, "onlyBodyWeight": true,
+            "reps": { "min": 5, "max": 100 }, "chance": 1
+        },
+        {
+            "name": "Sit up", "needBarbell": false, "needDumbell": false, "onlyBodyWeight": true,
+            "reps": { "min": 5, "max": 100 }, "chance": 1
+        },
+        {
+            "name": "Muscle up", "needBarbell": false, "needDumbell": false, "onlyBodyWeight": false,
             "reps": { "min": 5, "max": 30 }, "chance": 1
+        },
+        {
+            "name": "Snatch", "needBarbell": true, "needDumbell": false, "onlyBodyWeight": false,
+            "reps": { "min": 5, "max": 50 }, "weight": { "male": 50, "female": 40 }, "chance": 1
+        },
+        {
+            "name": "Deadlift", "needBarbell": true, "needDumbell": false, "onlyBodyWeight": false,
+            "reps": { "min": 5, "max": 50 }, "weight": { "male": 100, "female": 70 }, "chance": 1
+        },
+        {
+            "name": "", "needBarbell": true, "needDumbell": true, "onlyBodyWeight": false,
+            "reps": { "min": 5, "max": 10 }, "weight": { "male": 22.5, "female": 15 }, "chance": 1
         }
     ],
     "girls": [
-        {"name": "Mary", "movements": []},
-        {"name": "Fran", "movements": []},
-        {"name": "Cindy", "movements": []}
+        {
+            "name": "Amanda (for time)",
+            "movements": [
+                {
+                    "name": "Muscle up",
+                    "reps": 9
+                },
+                {
+                    "name": "Snatch",
+                    "reps": 9,
+                    "weight": {
+                        "male": 61.24,
+                        "female": 61.24
+                    }
+                },
+                {
+                    "name": "Muscle up",
+                    "reps": 7
+                },
+                {
+                    "name": "Snatch",
+                    "reps": 7,
+                    "weight": {
+                        "male": 61.24,
+                        "female": 61.24
+                    }
+                },
+                {
+                    "name": "Muscle up",
+                    "reps": 5
+                },
+                {
+                    "name": "Snatch",
+                    "reps": 5,
+                    "weight": {
+                        "male": 61.24,
+                        "female": 61.24
+                    }
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Angie (for time)",
+            "movements": [
+                {
+                    "name": "Pull up",
+                    "reps": 100
+                },
+                {
+                    "name": "Push up",
+                    "reps": 100
+                },
+                {
+                    "name": "Sit up",
+                    "reps": 100
+                },
+                {
+                    "name": "Air squat",
+                    "reps": 100
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Annie (for time)",
+            "movements": [
+                {
+                    "name": "Double under",
+                    "reps": 50
+                },
+                {
+                    "name": "Sit up",
+                    "reps": 50
+                },
+                {
+                    "name": "Double under",
+                    "reps": 40
+                },
+                {
+                    "name": "Sit up",
+                    "reps": 40
+                },
+                {
+                    "name": "Double under",
+                    "reps": 30
+                },
+                {
+                    "name": "Sit up",
+                    "reps": 30
+                },
+                {
+                    "name": "Double under",
+                    "reps": 20
+                },
+                {
+                    "name": "Sit up",
+                    "reps": 20
+                },
+                {
+                    "name": "Double under",
+                    "reps": 10
+                },
+                {
+                    "name": "Sit up",
+                    "reps": 10
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Barbara (5 rounds for time)",
+            "movements": [
+                {
+                    "name": "Pull up",
+                    "reps": 20
+                },
+                {
+                    "name": "Push up",
+                    "reps": 30
+                },
+                {
+                    "name": "Sit up",
+                    "reps": 40
+                },
+                {
+                    "name": "Air squat",
+                    "reps": 50
+                },
+                {
+                    "name": "3 min rest"
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Chelsea (30 min EMOM)",
+            "movements": [
+                {
+                    "name": "Pull up",
+                    "reps": 5
+                },
+                {
+                    "name": "Push up",
+                    "reps": 10
+                },
+                {
+                    "name": "Air squat",
+                    "reps": 15
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Cindy (20 min AMRAP)",
+            "movements": [
+                {
+                    "name": "Pull up",
+                    "reps": 5
+                },
+                {
+                    "name": "Push up",
+                    "reps": 10
+                },
+                {
+                    "name": "Air squat",
+                    "reps": 15
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Diane (for time)",
+            "movements": [
+                {
+                    "name": "Deadlift",
+                    "reps": 21,
+                    "weight": {
+                        "male": 102.06,
+                        "female": 102.06
+                    }
+                },
+                {
+                    "name": "Handstand push up",
+                    "reps": 21
+                },
+                {
+                    "name": "Deadlift",
+                    "reps": 15,
+                    "weight": {
+                        "male": 102.06,
+                        "female": 102.06
+                    }
+                },
+                {
+                    "name": "Handstand push up",
+                    "reps": 15
+                },
+                {
+                    "name": "Deadlift",
+                    "reps": 9,
+                    "weight": {
+                        "male": 102.06,
+                        "female": 102.06
+                    }
+                },
+                {
+                    "name": "Handstand push up",
+                    "reps": 9
+                }
+            ],
+            "chance": 1
+        }
     ]
 }
