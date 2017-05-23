@@ -75,6 +75,10 @@
         {
             "name": "Sumo Deadlift High Pull", "needBarbell": true, "needDumbell": false, "onlyBodyWeight": false,
             "reps": { "min": 5, "max": 50 }, "weight": { "male": 43, "female": 30 }, "chance": 10
+        },
+        {
+            "name": "Kettlebell Swing", "needBarbell": false, "needDumbell": false, "onlyBodyWeight": false,
+            "reps": { "min": 5, "max": 50 }, "weight": { "male": 32, "female": 24 }, "chance": 10
         }
     ],
     "girls": [
@@ -377,6 +381,40 @@
                         "male": 43.09,
                         "female": 29.48
                     }
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Christine (3 rounds for time)",
+            "movements": [
+                {
+                    "name": "500m Row"
+                },
+                {
+                    "name": "Deadlift (bodyweight)",
+                    "reps": 12
+                },
+                {
+                    "name": "Box Jump",
+                    "reps": 21
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Claudia (5 rounds for time)",
+            "movements": [
+                {
+                    "name": "Kettlebell Swing",
+                    "reps": 20,
+                    "weight": {
+                        "male": 24,
+                        "female": 16
+                    }
+                },
+                {
+                    "name": "400m Run"
                 }
             ],
             "chance": 1
