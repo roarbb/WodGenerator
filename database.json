@@ -55,11 +55,27 @@
         {
             "name": "Deadlift", "needBarbell": true, "needDumbell": false, "onlyBodyWeight": false,
             "reps": { "min": 5, "max": 50 }, "weight": { "male": 100, "female": 70 }, "chance": 10
+        },
+        {
+            "name": "Push press", "needBarbell": true, "needDumbell": false, "onlyBodyWeight": false,
+            "reps": { "min": 5, "max": 50 }, "weight": { "male": 60, "female": 40 }, "chance": 10
+        },
+        {
+            "name": "Box jump", "needBarbell": false, "needDumbell": false, "onlyBodyWeight": false,
+            "reps": { "min": 5, "max": 100 }, "chance": 10
+        },
+        {
+            "name": "Handstand push up", "needBarbell": false, "needDumbell": false, "onlyBodyWeight": true,
+            "reps": { "min": 2, "max": 20 }, "chance": 10
+        },
+        {
+            "name": "Overhead Squat", "needBarbell": true, "needDumbell": false, "onlyBodyWeight": false,
+            "reps": { "min": 5, "max": 40 }, "weight": { "male": 43, "female": 30 }, "chance": 10
+        },
+        {
+            "name": "Sumo Deadlift High Pull", "needBarbell": true, "needDumbell": false, "onlyBodyWeight": false,
+            "reps": { "min": 5, "max": 50 }, "weight": { "male": 43, "female": 30 }, "chance": 10
         }
-        // {
-        //     "name": "", "needBarbell": true, "needDumbell": true, "onlyBodyWeight": false,
-        //     "reps": { "min": 5, "max": 10 }, "weight": { "male": 22.5, "female": 15 }, "chance": 1
-        // }
     ],
     "girls": [
         {
@@ -73,8 +89,8 @@
                     "name": "Snatch",
                     "reps": 9,
                     "weight": {
-                        "male": 61.24,
-                        "female": 61.24
+                        "male": 61.25,
+                        "female": 43.09
                     }
                 },
                 {
@@ -198,6 +214,24 @@
             "chance": 1
         },
         {
+            "name": "Betty (5 rounds for time)",
+            "movements": [
+                {
+                    "name": "Push Press",
+                    "reps": 12,
+                    "weight": {
+                        "male": 61.23,
+                        "female": 43.09
+                    }
+                },
+                {
+                    "name": "Box Jumps",
+                    "reps": 20
+                }
+            ],
+            "chance": 1
+        },
+        {
             "name": "Chelsea (30 min EMOM)",
             "movements": [
                 {
@@ -234,14 +268,14 @@
             "chance": 1
         },
         {
-            "name": "Diane (for time)",
+            "name": "Candy (5 rounds for time)",
             "movements": [
                 {
                     "name": "Deadlift",
                     "reps": 21,
                     "weight": {
                         "male": 102.06,
-                        "female": 102.06
+                        "female": 70.31
                     }
                 },
                 {
@@ -253,7 +287,7 @@
                     "reps": 15,
                     "weight": {
                         "male": 102.06,
-                        "female": 102.06
+                        "female": 70.31
                     }
                 },
                 {
@@ -265,12 +299,84 @@
                     "reps": 9,
                     "weight": {
                         "male": 102.06,
-                        "female": 102.06
+                        "female": 70.31
                     }
                 },
                 {
                     "name": "Handstand push up",
                     "reps": 9
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Betty (5 rounds for time)",
+            "movements": [
+                {
+                    "name": "Pull up",
+                    "reps": 20
+                },
+                {
+                    "name": "Push up",
+                    "reps": 40
+                },
+                {
+                    "name": "Air squat",
+                    "reps": 60
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Charlotte (for time)",
+            "movements": [
+                {
+                    "name": "Overhead Squats",
+                    "reps": 21,
+                    "weight": {
+                        "male": 43.09,
+                        "female": 29.48
+                    }
+                },
+                {
+                    "name": "Sumo Deadlift High Pull",
+                    "reps": 21,
+                    "weight": {
+                        "male": 43.09,
+                        "female": 29.48
+                    }
+                },
+                {
+                    "name": "Overhead Squats",
+                    "reps": 15,
+                    "weight": {
+                        "male": 43.09,
+                        "female": 29.48
+                    }
+                },
+                {
+                    "name": "Sumo Deadlift High Pull",
+                    "reps": 15,
+                    "weight": {
+                        "male": 43.09,
+                        "female": 29.48
+                    }
+                },
+                {
+                    "name": "Overhead Squats",
+                    "reps": 9,
+                    "weight": {
+                        "male": 43.09,
+                        "female": 29.48
+                    }
+                },
+                {
+                    "name": "Sumo Deadlift High Pull",
+                    "reps": 9,
+                    "weight": {
+                        "male": 43.09,
+                        "female": 29.48
+                    }
                 }
             ],
             "chance": 1
