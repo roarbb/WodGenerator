@@ -79,6 +79,34 @@
         {
             "name": "Kettlebell Swing", "needBarbell": false, "needDumbell": false, "onlyBodyWeight": false,
             "reps": { "min": 5, "max": 50 }, "weight": { "male": 32, "female": 24 }, "chance": 10
+        },
+        {
+            "name": "Clean", "needBarbell": true, "needDumbell": false, "onlyBodyWeight": false,
+            "reps": { "min": 5, "max": 50 }, "weight": { "male": 60, "female": 40 }, "chance": 10
+        },
+        {
+            "name": "Ring Dip", "needBarbell": false, "needDumbell": false, "onlyBodyWeight": false,
+            "reps": { "min": 5, "max": 40 }, "chance": 10
+        },
+        {
+            "name": "Clean and Jerk", "needBarbell": true, "needDumbell": false, "onlyBodyWeight": false,
+            "reps": { "min": 5, "max": 50 }, "weight": { "male": 60, "female": 40 }, "chance": 10
+        },
+        {
+            "name": "Thruster", "needBarbell": true, "needDumbell": false, "onlyBodyWeight": false,
+            "reps": { "min": 5, "max": 50 }, "weight": { "male": 43, "female": 30 }, "chance": 10
+        },
+        {
+            "name": "Wallball Shot", "needBarbell": false, "needDumbell": false, "onlyBodyWeight": false,
+            "reps": { "min": 5, "max": 100 }, "weight": { "male": 10, "female": 6 }, "chance": 10
+        },
+        {
+            "name": "Bench Press (BW)", "needBarbell": true, "needDumbell": false, "onlyBodyWeight": false,
+            "reps": { "min": 5, "max": 20 }, "chance": 6
+        },
+        {
+            "name": "Burpee", "needBarbell": false, "needDumbell": false, "onlyBodyWeight": true,
+            "reps": { "min": 5, "max": 100 }, "chance": 11
         }
     ],
     "girls": [
@@ -275,6 +303,24 @@
             "name": "Candy (5 rounds for time)",
             "movements": [
                 {
+                    "name": "Pull up",
+                    "reps": 20
+                },
+                {
+                    "name": "Push up",
+                    "reps": 40
+                },
+                {
+                    "name": "Air squat",
+                    "reps": 60
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Diane (for time)",
+            "movements": [
+                {
                     "name": "Deadlift",
                     "reps": 21,
                     "weight": {
@@ -412,6 +458,321 @@
                         "male": 24,
                         "female": 16
                     }
+                },
+                {
+                    "name": "400m Run"
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Elizabeth (for time)",
+            "movements": [
+                {
+                    "name": "Squat Clean",
+                    "reps": 21,
+                    "weight": {
+                        "male": 61.23,
+                        "female": 43.09
+                    }
+                },
+                {
+                    "name": "Ring Dip",
+                    "reps": 21
+                },
+                {
+                    "name": "Squat Clean",
+                    "reps": 15,
+                    "weight": {
+                        "male": 61.23,
+                        "female": 43.09
+                    }
+                },
+                {
+                    "name": "Ring Dip",
+                    "reps": 15
+                },
+                {
+                    "name": "Squat Clean",
+                    "reps": 9,
+                    "weight": {
+                        "male": 61.23,
+                        "female": 43.09
+                    }
+                },
+                {
+                    "name": "Ring Dip",
+                    "reps": 9
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Eva (5 rounds for time)",
+            "movements": [
+                {
+                    "name": "800m Run"
+                },
+                {
+                    "name": "Kettlebell Swing",
+                    "reps": 30,
+                    "weight": {
+                        "male": 32,
+                        "female": 24
+                    }
+                },
+                {
+                    "name": "Pull up",
+                    "reps": 30
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Grace (for time)",
+            "movements": [
+                {
+                    "name": "Clean and Jerk",
+                    "reps": 30,
+                    "weight": {
+                        "male": 61.23,
+                        "female": 43.09
+                    }
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Fran (for time)",
+            "movements": [
+                {
+                    "name": "Thruster",
+                    "reps": 21,
+                    "weight": {
+                        "male": 43.09,
+                        "female": 29.48
+                    }
+                },
+                {
+                    "name": "Pull up",
+                    "reps": 21
+                },
+                {
+                    "name": "Thruster",
+                    "reps": 15,
+                    "weight": {
+                        "male": 43.09,
+                        "female": 29.48
+                    }
+                },
+                {
+                    "name": "Pull up",
+                    "reps": 15
+                },
+                {
+                    "name": "Thruster",
+                    "reps": 9,
+                    "weight": {
+                        "male": 43.09,
+                        "female": 29.48
+                    }
+                },
+                {
+                    "name": "Pull up",
+                    "reps": 9
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Heather (3 rounds for time)",
+            "movements": [
+                {
+                    "name": "550m Row"
+                },
+                {
+                    "name": "Deadlift",
+                    "reps": 12,
+                    "weight": {
+                        "male": 102.06,
+                        "female": 70.31
+                    }
+                },
+                {
+                    "name": "Ring Dip",
+                    "reps": 21
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Isabel (for time)",
+            "movements": [
+                {
+                    "name": "Snatch",
+                    "reps": 30,
+                    "weight": {
+                        "male": 61.23,
+                        "female": 43.09
+                    }
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Helen (3 rounds for time)",
+            "movements": [
+                {
+                    "name": "400m Run"
+                },
+                {
+                    "name": "Kettlebell Swing",
+                    "reps": 21,
+                    "weight": {
+                        "male": 24,
+                        "female": 16
+                    }
+                },
+                {
+                    "name": "Pull up",
+                    "reps": 12
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Jackie (for time)",
+            "movements": [
+                {
+                    "name": "1000m Row"
+                },
+                {
+                    "name": "Thruster",
+                    "reps": 50,
+                    "weight": {
+                        "male": 20.41,
+                        "female": 15.88
+                    }
+                },
+                {
+                    "name": "Pull up",
+                    "reps": 30
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Karabel (10 rounds for time)",
+            "movements": [
+                {
+                    "name": "Power Snatch",
+                    "reps": 3,
+                    "weight": {
+                        "male": 61.23,
+                        "female": 43.09
+                    }
+                },
+                {
+                    "name": "Wallball Shot",
+                    "reps": 15,
+                    "weight": {
+                        "male": 9,
+                        "female": 6
+                    }
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Kelly (5 rounds for time)",
+            "movements": [
+                {
+                    "name": "400m Run"
+                },
+                {
+                    "name": "Box Jump",
+                    "reps": 30
+                },
+                {
+                    "name": "Wallball Shot",
+                    "reps": 30,
+                    "weight": {
+                        "male": 9,
+                        "female": 6
+                    }
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Karen (for time)",
+            "movements": [
+                {
+                    "name": "Wallball Shot",
+                    "reps": 150,
+                    "weight": {
+                        "male": 9,
+                        "female": 6
+                    }
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Lola (5 rounds for time)",
+            "movements": [
+                {
+                    "name": "Double under",
+                    "reps": 30
+                },
+                {
+                    "name": "Knees to Elbow",
+                    "reps": 20
+                },
+                {
+                    "name": "Handstand push up",
+                    "reps": 10
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "LINDA (10-9-8-7-6-5-4-3-2-1)",
+            "movements": [
+                {
+                    "name": "Deadlift (1.5 BW)"
+                },
+                {
+                    "name": "Bench Press (BW)"
+                },
+                {
+                    "name": "Clean (3/4 BW)"
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Lynne (5 rounds for max reps)",
+            "movements": [
+                {
+                    "name": "Bench Press (BW)"
+                },
+                {
+                    "name": "Pull up"
+                }
+            ],
+            "chance": 1
+        },
+        {
+            "name": "Lucy (5 rounds for time)",
+            "movements": [
+                {
+                    "name": "Pull up",
+                    "reps": 5
+                },
+                {
+                    "name": "Burpee",
+                    "reps": 10
                 },
                 {
                     "name": "400m Run"
